@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../components/Button";
 import InputField from "../components/InputField";
 import axios from "../instance.js";
@@ -7,6 +7,11 @@ import { success, error } from "../helper/hottoast.js";
 import { useNavigate } from "react-router-dom";
 
 const Register = ({ userCount }) => {
+
+
+  const [isInAppBrowser, setIsInAppBrowser] = useState(false);
+
+
   const navigate = useNavigate();
   const [inputObject, setInputObject] = useState({
     name: "",
@@ -71,6 +76,131 @@ const Register = ({ userCount }) => {
     }
   };
 
+
+
+
+  // const [isFocused, setIsFocused] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
+
+  // console.log("isFocused",isFocused);
+  // console.log("isMobile",isMobile);
+
+
+// 1
+  // const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
+  // const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
+
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setViewportHeight(window.innerHeight);
+  //   };
+
+  //   const handleFocus = () => {
+  //     setIsKeyboardOpen(true);
+  //   };
+
+  //   const handleBlur = () => {
+  //     setIsKeyboardOpen(false);
+  //   };
+
+  //   window.addEventListener('resize', handleResize);
+  //   window.addEventListener('focusin', handleFocus);
+  //   window.addEventListener('focusout', handleBlur);
+
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize);
+  //     window.removeEventListener('focusin', handleFocus);
+  //     window.removeEventListener('focusout', handleBlur);
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   // This effect runs whenever the viewport height changes
+  //   // You might want to check if the height decreased significantly
+  //   if (window.innerHeight < viewportHeight) {
+  //     setIsKeyboardOpen(true);
+  //   } else {
+  //     setIsKeyboardOpen(false);
+  //   }
+  // }, [viewportHeight]);
+
+
+  // console.log("isKeyboardOpen",isKeyboardOpen)
+
+
+  // 2
+
+
+
+
+
+  // useEffect(() => {
+  //   const checkIsMobile = () => {
+  //     const mobileMediaQuery = window.matchMedia("(max-width: 767px)");
+  //     setIsMobile(mobileMediaQuery.matches);
+  //   };
+
+  //   // Initial check
+  //   checkIsMobile();
+
+  //   // Add event listener for window resize
+  //   window.addEventListener('resize', checkIsMobile);
+
+  //   // Cleanup
+  //   return () => window.removeEventListener('resize', checkIsMobile);
+  // }, []);
+
+  // const handleFocus = () => {
+  //   if (isMobile) {
+  //     setIsFocused(true);
+  //   }
+  // };
+
+  // const handleBlur = () => {
+  //   if (isMobile) {
+  //     setIsFocused(false);
+  //   }
+  // };
+
+
+
+
+  // const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
+  // const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
+  //   console.log("isKeyboardOpen",isKeyboardOpen)
+
+
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setViewportHeight(window.innerHeight);
+  //   };
+
+  //   const handleFocus = () => {
+  //     setIsKeyboardOpen(true);
+  //   };
+
+  //   const handleBlur = () => {
+  //     setIsKeyboardOpen(false);
+  //   };
+
+  //   window.addEventListener("resize", handleResize);
+  //   window.addEventListener("focusin", handleFocus);
+  //   window.addEventListener("focusout", handleBlur);
+
+  //   // Initial check
+  //   if (window.innerHeight < viewportHeight) {
+  //     setIsKeyboardOpen(true);
+  //   } else {
+  //     setIsKeyboardOpen(false);
+  //   }
+
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //     window.removeEventListener("focusin", handleFocus);
+  //     window.removeEventListener("focusout", handleBlur);
+  //   };
+  // }, [viewportHeight]);
+
   return (
     <>
       <div className=" flex flex-col  md:flex-row justify-between p-[px] h-[vh] md:h-full md:p-[52px] md:pt-20 md:pb-40">
@@ -87,17 +217,26 @@ const Register = ({ userCount }) => {
           </p>
 
           <InputField
+
             text={"Enter full name"}
             icon={`./assets/icons/user.png`}
             className="!h-4 !w-4"
+
+            // onFocus={handleFocus}
+            // onBlur={handleBlur}
+    
             onChange={(e) =>
               setInputObject({ ...inputObject, name: e.target.value })
             }
-            maxlength="15"
+            maxLength="15"
           />
 
           <InputField
             onChange={handlePhoneChange}
+            
+            // onFocus={handleFocus}
+            // onBlur={handleBlur}
+
             value={inputObject.phone}
             type="number"
             pattern="[0-9]{10}"
@@ -136,7 +275,9 @@ const Register = ({ userCount }) => {
         </div>
       </div>
 
-      <div className=" absolute bottom-8 left-0 right-0 flex  md:hidden flex-col items-center gap-3 ">
+      {/* ${?"hidden":"block"} */}
+
+      <div className={` absolute bottom-8 left-0 right-0 flex  md:hidden flex-col items-center gap-3 `}>
         <div className=" text-white text-center md:text-right bg-black bg-opacity-50 md:bg-transparent     px-6 py-2 rounded-xl ">
           <p className="text-white  font-OpenSans  md:font-Inter text-[11.3px] leading-[15.4px]  md:text-[20px] md:leading-6 font-bold ">
             Pledges so far

@@ -23,6 +23,7 @@ const Home = ({ userCount, setuserCount }) => {
 
 
   const postPladge = async () => {
+    window.fbq('track', ' SubmitApplication');
     gtag_report_conversion(`${window.location.origin}/register`)
         const response = await axios.get("/pladge");
 
