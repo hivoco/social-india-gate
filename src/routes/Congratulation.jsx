@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import Share from "../components/Share";
 
 function Congratulation() {
+  const title = "*Here is my India Gate Grains of Hope Pledge, it's time to take yours:*";
   const [countdown, setCountdown] = useState(60); // 5 seconds countdown
   const navigate = useNavigate();
 
@@ -106,15 +107,62 @@ function Congratulation() {
 
         <div className=" flex flex-col justify-center md:justify-start items-cente  w-full md:w-[344px] pb- md:pb-0   left-0 md:left-20 gap-9 top-40 px- md:px-0">
           <div className="pt-2 flex flex-col gap-7 text-center text-white items-center">
-            <img
-              className={`${
-                certificateUrl
-                  ? "border w-48 md:w-96 md:h-auto"
-                  : "w-auto h-auto"
-              } md:p-0`}
-              src={`${certificateUrl}`}
-              alt="certificate image"
-            />
+            <div className="flex flex-col items-center gap-3">
+              <img
+                className={`${
+                  certificateUrl
+                    ? "border w-48 md:w-96 md:h-auto"
+                    : "w-auto h-auto"
+                } md:p-0`}
+                src={`${certificateUrl}`}
+                alt="certificate image"
+              />
+
+              <div className=" flex  gap-4">
+                <WhatsappShareButton
+                  url={`${
+                    window.location.origin
+                  }/share?url=${encodeURIComponent(certificateUrl)}`}
+                  title={title}
+                >
+                  <img
+                    src="./assets/images/WhatsApp.png"
+                    className="w-[24px] h-[24px] hover:cursor-pointer hover:scale-110 transition-all delay-150 duration-150 ease-in"
+                    alt=""
+                  />
+                </WhatsappShareButton>
+                <LinkedinShareButton
+                  url={certificateUrl}
+                  title={"Here is my Pledge, it's time to take yours :: "}
+                >
+                  <img
+                    src="./assets/images/LinkedIn.png"
+                    className="w-[24px] h-[24px] hover:cursor-pointer hover:scale-110 transition-all delay-150 duration-150 ease-in"
+                    alt=""
+                  />
+                </LinkedinShareButton>
+                <FacebookShareButton
+                  url={certificateUrl}
+                  quote={"Here is my Pledge, it's time to take yours :: "}
+                >
+                  <img
+                    src="./assets/images/Facebook.png"
+                    className="w-[24px] h-[24px] hover:cursor-pointer hover:scale-110 transition-all delay-150 duration-150 ease-in"
+                    alt=""
+                  />
+                </FacebookShareButton>
+                <TwitterShareButton
+                  url={certificateUrl}
+                  title={"Here is my Pledge, it's time to take yours :: "}
+                >
+                  <img
+                    src="./assets/images/TwitterX.png"
+                    className="w-[24px] h-[24px] hover:cursor-pointer hover:scale-110 transition-all delay-150 duration-150 ease-in"
+                    alt=""
+                  />
+                </TwitterShareButton>
+              </div>
+            </div>
 
             <div className="flex  flex-col-reverse items-center flex-1 absolute px-6 left-0  bottom-4 w-full gap-2 md:hidden ">
               <Button
@@ -127,57 +175,6 @@ function Congratulation() {
                 text={`download`}
                 className={` md:flex`}
               />
-
-              <div className=" flex  gap-4">
-                <WhatsappShareButton
-                  url={`${
-                    window.location.origin
-                  }/share?url=${encodeURIComponent(certificateUrl)}`}
-                  title={"Here is my Pledge, it's time to take yours :: "}
-                >
-                  <img
-                    src="./assets/images/WhatsApp.png"
-                    className="w-[24px] h-[24px] hover:cursor-pointer hover:scale-110 transition-all delay-150 duration-150 ease-in"
-                    alt=""
-                  />
-                </WhatsappShareButton>
-                <LinkedinShareButton
-                  url={`${
-                    window.location.origin
-                  }/share?url=${encodeURIComponent(certificateUrl)}`}
-                  title={"Here is my Pledge, it's time to take yours :: "}
-                >
-                  <img
-                    src="./assets/images/LinkedIn.png"
-                    className="w-[24px] h-[24px] hover:cursor-pointer hover:scale-110 transition-all delay-150 duration-150 ease-in"
-                    alt=""
-                  />
-                </LinkedinShareButton>
-                <FacebookShareButton
-                  url={`${
-                    window.location.origin
-                  }/share?url=${encodeURIComponent(certificateUrl)}`}
-                  title={"Here is my Pledge, it's time to take yours :: "}
-                >
-                  <img
-                    src="./assets/images/Facebook.png"
-                    className="w-[24px] h-[24px] hover:cursor-pointer hover:scale-110 transition-all delay-150 duration-150 ease-in"
-                    alt=""
-                  />
-                </FacebookShareButton>
-                <TwitterShareButton
-                  url={`${
-                    window.location.origin
-                  }/share?url=${encodeURIComponent(certificateUrl)}`}
-                  title={"Here is my Pledge, it's time to take yours :: "}
-                >
-                  <img
-                    src="./assets/images/TwitterX.png"
-                    className="w-[24px] h-[24px] hover:cursor-pointer hover:scale-110 transition-all delay-150 duration-150 ease-in"
-                    alt=""
-                  />
-                </TwitterShareButton>
-              </div>
 
               {/* <button
                 style={{ backgroundColor: "rgba(245, 245, 245, 0.12) " }}
@@ -220,7 +217,7 @@ function Congratulation() {
                   alt=""
                 />
               </WhatsappShareButton> */}
-
+              {/* 
               <div className=" flex gap-4">
                 <WhatsappShareButton
                   url={`${
@@ -235,10 +232,8 @@ function Congratulation() {
                   />
                 </WhatsappShareButton>
                 <LinkedinShareButton
-                  url={`${
-                    window.location.origin
-                  }/share?url=${encodeURIComponent(certificateUrl)}`}
-                  title={"Here is my Pledge, it's time to take yours :: "}
+                url={certificateUrl}
+                title={"Here is my Pledge, it's time to take yours :: "}
                 >
                   <img
                     src="./assets/images/LinkedIn.png"
@@ -247,10 +242,8 @@ function Congratulation() {
                   />
                 </LinkedinShareButton>
                 <FacebookShareButton
-                  url={`${
-                    window.location.origin
-                  }/share?url=${encodeURIComponent(certificateUrl)}`}
-                  title={"Here is my Pledge, it's time to take yours :: "}
+                url={certificateUrl}
+                title={"Here is my Pledge, it's time to take yours :: "}
                 >
                   <img
                     src="./assets/images/Facebook.png"
@@ -259,10 +252,8 @@ function Congratulation() {
                   />
                 </FacebookShareButton>
                 <TwitterShareButton
-                  url={`${
-                    window.location.origin
-                  }/share?url=${encodeURIComponent(certificateUrl)}`}
-                  title={"Here is my Pledge, it's time to take yours :: "}
+                url={certificateUrl}
+                title={"Here is my Pledge, it's time to take yours :: "}
                 >
                   <img
                     src="./assets/images/TwitterX.png"
@@ -270,7 +261,7 @@ function Congratulation() {
                     alt=""
                   />
                 </TwitterShareButton>
-              </div>
+              </div> */}
             </div>
 
             {/* <div className=" flex gap-4">
