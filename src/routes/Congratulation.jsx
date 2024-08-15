@@ -109,14 +109,14 @@ function Congratulation() {
             <img
               className={`${
                 certificateUrl
-                  ? "border max-w-48 md:w-96 md:h-auto"
+                  ? "border w-48 md:w-96 md:h-auto"
                   : "w-auto h-auto"
               } md:p-0`}
               src={`${certificateUrl}`}
               alt="certificate image"
             />
 
-            <div className="flex  flex-col-reverse items-center flex-1 absolute px-6 left-0  bottom-6 w-full gap-[4px] md:hidden ">
+            <div className="flex  flex-col-reverse items-center flex-1 absolute px-6 left-0  bottom-4 w-full gap-2 md:hidden ">
               <Button
                 onClick={() =>
                   downloadImage(
@@ -133,7 +133,7 @@ function Congratulation() {
                   url={`${
                     window.location.origin
                   }/share?url=${encodeURIComponent(certificateUrl)}`}
-                  title={"View my certificate, Pledge and Share now :: "}
+                  title={"Here is my Pledge, it's time to take yours :: "}
                 >
                   <img
                     src="./assets/images/WhatsApp.png"
@@ -142,8 +142,10 @@ function Congratulation() {
                   />
                 </WhatsappShareButton>
                 <LinkedinShareButton
-                  url={certificateUrl}
-                  title={"View my certificate, Pledge and Share now :: "}
+                  url={`${
+                    window.location.origin
+                  }/share?url=${encodeURIComponent(certificateUrl)}`}
+                  title={"Here is my Pledge, it's time to take yours :: "}
                 >
                   <img
                     src="./assets/images/LinkedIn.png"
@@ -152,8 +154,10 @@ function Congratulation() {
                   />
                 </LinkedinShareButton>
                 <FacebookShareButton
-                  url={certificateUrl}
-                  title={"View my certificate, Pledge and Share now :: "}
+                  url={`${
+                    window.location.origin
+                  }/share?url=${encodeURIComponent(certificateUrl)}`}
+                  title={"Here is my Pledge, it's time to take yours :: "}
                 >
                   <img
                     src="./assets/images/Facebook.png"
@@ -162,8 +166,10 @@ function Congratulation() {
                   />
                 </FacebookShareButton>
                 <TwitterShareButton
-                  url={certificateUrl}
-                  title={"View my certificate, Pledge and Share now :: "}
+                  url={`${
+                    window.location.origin
+                  }/share?url=${encodeURIComponent(certificateUrl)}`}
+                  title={"Here is my Pledge, it's time to take yours :: "}
                 >
                   <img
                     src="./assets/images/TwitterX.png"
@@ -182,7 +188,7 @@ function Congratulation() {
               </button> */}
             </div>
 
-            <div className="hidden md:flex flex-col-reverse items-center gap-2 w-full">
+            <div className="hidden md:flex flex-col-reverse items-center gap-3 w-full">
               <Button
                 onClick={() =>
                   downloadImage(
@@ -220,7 +226,7 @@ function Congratulation() {
                   url={`${
                     window.location.origin
                   }/share?url=${encodeURIComponent(certificateUrl)}`}
-                  title={"View my certificate, Pledge and Share now :: "}
+                  title={"Here is my Pledge, it's time to take yours :: "}
                 >
                   <img
                     src="./assets/images/WhatsApp.png"
@@ -229,8 +235,10 @@ function Congratulation() {
                   />
                 </WhatsappShareButton>
                 <LinkedinShareButton
-                  url={certificateUrl}
-                  title={"View my certificate, Pledge and Share now :: "}
+                  url={`${
+                    window.location.origin
+                  }/share?url=${encodeURIComponent(certificateUrl)}`}
+                  title={"Here is my Pledge, it's time to take yours :: "}
                 >
                   <img
                     src="./assets/images/LinkedIn.png"
@@ -239,8 +247,10 @@ function Congratulation() {
                   />
                 </LinkedinShareButton>
                 <FacebookShareButton
-                  url={certificateUrl}
-                  title={"View my certificate, Pledge and Share now :: "}
+                  url={`${
+                    window.location.origin
+                  }/share?url=${encodeURIComponent(certificateUrl)}`}
+                  title={"Here is my Pledge, it's time to take yours :: "}
                 >
                   <img
                     src="./assets/images/Facebook.png"
@@ -249,8 +259,10 @@ function Congratulation() {
                   />
                 </FacebookShareButton>
                 <TwitterShareButton
-                  url={certificateUrl}
-                  title={"View my certificate, Pledge and Share now :: "}
+                  url={`${
+                    window.location.origin
+                  }/share?url=${encodeURIComponent(certificateUrl)}`}
+                  title={"Here is my Pledge, it's time to take yours :: "}
                 >
                   <img
                     src="./assets/images/TwitterX.png"
