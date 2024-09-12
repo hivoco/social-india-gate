@@ -1,47 +1,49 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Button from "../components/Button";
 import axios from "../instance.js";
+import { useEffect, useState } from "react";
+import YouTube from "react-youtube";
+import VideoPopup from "../components/VideoPopup.jsx";
 
 const Home = ({ userCount, setuserCount }) => {
-
+  const [showPopup, setShowPopup] = useState(false);
   function gtag_report_conversion(url) {
     var callback = function () {
-      if (typeof (url) != 'undefined') {
+      if (typeof url != "undefined") {
         window.location = url;
       }
     };
-    window.gtag('event', 'conversion', {
-      'send_to': 'AW-11093062414/XJm_CMjLuMoZEI7myqkp',
-      'event_callback': callback
+    window.gtag("event", "conversion", {
+      send_to: "AW-11093062414/XJm_CMjLuMoZEI7myqkp",
+      event_callback: callback,
     });
     return false;
   }
 
-
-
-
-
-
   const postPladge = async () => {
-    window.fbq('track', ' SubmitApplication');
-    gtag_report_conversion(`${window.location.origin}/register`)
-        const response = await axios.get("/pladge");
+    window.fbq("track", " SubmitApplication");
+    gtag_report_conversion(`${window.location.origin}/register`);
+    const response = await axios.get("/pladge");
 
     if (response.status === 200) {
       setuserCount(1040 + response.data.msg);
       navigate("/register");
     }
   };
-  const navigate = useNavigate();
+
   return (
     <>
-      <div className=" flex flex-col md:flex-row justify-between md:p-[52px]   h-[vh] md:h-full md:pt-20 md:pb-40 ">
+      <div
+        className={`flex flex-col md:flex-row justify-between md:p-[52px]   h-[vh] md:h-full md:pt-20 md:pb-40 ${
+          showPopup ? "blur-sm" : ""
+        }`}
+      >
         <div className="flex flex-col justify-center md:justify-start items-center  w-full md:w-[344px]   left-0 md:left-20 gap-9 top-40 px-4 md:px-0">
-            <img
-              className="w-[160px] h-[200px]  hidden md:flex"
-              src="./assets/images/logo-2.png"
-              alt=""
-            />
+          <img
+            className="w-[160px] h-[200px]  hidden md:flex"
+            src="./assets/images/logo-2.png"
+            alt=""
+          />
           {/* visible in pc only  */}
 
           {/* text-shadow: 0px 4px 4px  #00000040; */}
@@ -77,7 +79,6 @@ const Home = ({ userCount, setuserCount }) => {
               </p>
 
               <div className="flex flex-col mt-[-10px]  md:mt-[-20px]  ">
-
                 <p className="text-shadow-custom text-[45.3px] leading-[58.7px]  md:text-[120px] md:leading-[165px] font-bold font-Antonio md:h-[160px]">
                   {userCount}
                 </p>
@@ -91,9 +92,10 @@ const Home = ({ userCount, setuserCount }) => {
         </div>
       </div>
 
-
-{/* for phone hiddne on desktop */}
-      <div className=" flex md:hidden flex-col gap-3 absolute bottom-[2rem] left-0 right-0 ">
+      {/* for phone hiddne on desktop */}
+      <div
+        className={`flex md:hidden flex-col gap-3 absolute bottom-[2rem] left-0 right-0  `}
+      >
         <div className=" flex flex-col justify-center md:justify-start items-center md:items-end  w-full  md:w-[344px]  pb- md:pb-0  left-0 md:left-20 gap-9 top-40 px-4 md:px-0">
           <div className="flex flex-col gap-24 text-center text-white items-center">
             <img
@@ -131,6 +133,7 @@ const Home = ({ userCount, setuserCount }) => {
           className="md:hidden !w-[80%] text-xl leading-[25px] !mx-auto  justify-center mb- "
         />
       </div>
+      <VideoPopup showPopup={showPopup} setShowPopup={setShowPopup} />
     </>
 
     // <>

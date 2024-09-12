@@ -115,13 +115,13 @@ const SliderPopup = ({ isOpen, toggleSlider }) => {
     //   >
     //     <div className="p-4">
     //       <div className="flex justify-end  ">
-    //         <img
-    //           onClick={() => setIsOpen(false)}
-    //           className="hover:cursor-pointer"
-    //           src="/assets/svgs/close.svg"
-    //           alt=""
-    //           srcSet=""
-    //         />
+            // <img
+            //   onClick={() => setIsOpen(false)}
+            //   className="hover:cursor-pointer"
+            //   src="/assets/svgs/close.svg"
+            //   alt=""
+            //   srcSet=""
+            // />
     //       </div>
     //       <div className="flex flex-col items-center mt-5">
     //         <p className="font-OpenSans text-base text-black">
