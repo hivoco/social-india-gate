@@ -163,12 +163,12 @@ const Sidebar = () => {
     //       alt=""
     //     />
 
-    //     <img
-    //       src="./assets/icons/menu-btn.png"
-    //       className="h-[44px] w-[44px] flex md:hidden self-center"
-    //       alt="Menu"
-    //       onClick={toggleMenu}
-    //     />
+        // <img
+        //   src="./assets/icons/menu-btn.png"
+        //   className="h-[44px] w-[44px] flex md:hidden self-center"
+        //   alt="Menu"
+        //   onClick={toggleMenu}
+        // />
     //   </div>
     //   {isMenuOpen && (
     //     <div className="fixed top-15 right-3 mt-16 mr-4 bg-white shadow-lg rounded-xl w-[200px] p-4 z-50">

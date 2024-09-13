@@ -133,7 +133,7 @@ const Home = ({ userCount, setuserCount }) => {
           className="md:hidden !w-[80%] text-xl leading-[25px] !mx-auto  justify-center mb- "
         />
       </div>
-      <VideoPopup showPopup={showPopup} setShowPopup={setShowPopup} />
+      {/* <VideoPopup showPopup={showPopup} setShowPopup={setShowPopup} /> */}
     </>
 
     // <>
