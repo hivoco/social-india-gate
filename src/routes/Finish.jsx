@@ -75,9 +75,7 @@ function Finish() {
 
             <p className="  font-OpenSans text-[15px] leading-5 tracking-wide  font-semibold text-center text-white [text-shadow:_0px_4px_4px_#00000040]">
               Your support helped us in providing over <br />
-              <span className=" font-OpenSans  text-[20px]">
-                1.5 lakhs
-              </span>{" "}
+              <span className=" font-OpenSans  text-[20px]">1.5 lakh</span>{" "}
               meals to children in need. <br /> We shall continue this journey
               to spread
               <br />
@@ -159,10 +157,9 @@ function Finish() {
           </h2>
 
           <p className="  font-OpenSans text-lg 2xl:text-xl leading-7 tracking-wide  font-semibold text-center text-white [text-shadow:_0px_4px_4px_#00000040]">
-            Your support helped us in providing over
-            <span className=" font-OpenSans  text-lg ">1.5 lakhs</span> meals to
+            Your support helped us in providing over&nbsp;
+            <span className=" font-OpenSans  text-xl  ">1.5 lakh</span> meals to
             children in <br /> need. We shall continue this journey to spread
-            <br />
             hope, joy and build a <br /> brighter tomorrow.
           </p>
           <YouTube

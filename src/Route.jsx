@@ -8,6 +8,7 @@ import axios from "./instance.js";
 import Register from "./routes/register.jsx";
 import Otp from "./routes/otp.jsx";
 import Thankyou from "./routes/thank-you.jsx";
+
 import { useEffect, useState } from "react";
 import Congratulation from "./routes/Congratulation.jsx";
 import TermsCondition from "./components/TermsCondition.jsx";
