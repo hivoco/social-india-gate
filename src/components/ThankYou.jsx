@@ -18,7 +18,7 @@ const ThankYou = () => {
         />
       </div>
 
-      <div className="flex flex-col gap-[9px] px-6 md:p-0 md:gap-0 items-center  flex-1  md:max-w-[366px]">
+      <div className="flex flex-col gap-[9px] px-6 md:p-0 md:gap-0 items-center  flex-1  md:max-w-[366px] ">
         <img
           className="-mt-2 block md:hidden mb-[10px]  h-[98px] md:h-[214px] [text-shadow:_0_0.86px_6.85px_#ECDEDB52]"
           src="/assets/images/grains-of-hope.png"

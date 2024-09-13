@@ -38,7 +38,7 @@ function Finish() {
 
   return (
     <div
-      className={` relative h-svh  bg-custom-bg-2 md:bg-custom-bg bg-cover bg-center  `}
+      className={` relative h-svh  bg-custom-bg-2 md:bg-custom-blur-bg bg-cover bg-center   `}
     >
       <div className="flex flex-col h-full md:hidden">
         <div className="flex-1 ">
@@ -136,7 +136,7 @@ function Finish() {
         )}
         <SliderPopup isOpen={isSliderOpen} toggleSlider={toggleSlider} />
       </div>
-      <div className="hidden md:block pt-5 2xl:pt-10">
+      <div className="hidden md:block pt-5 2xl:pt-10 ">
         <div className="flex justify-center flex-col px-5 items-center ">
           <div className="flex justify-center gap-2">
             <img
@@ -147,7 +147,7 @@ function Finish() {
             <div className="h-[100px]  border-l-2"></div>
             <img
               src="./assets/images/logo-1.png"
-              className="h-[100px] object-contain  self-center  "
+              className="h-[100px] object-contain  self-center "
               alt=""
             />
           </div>
